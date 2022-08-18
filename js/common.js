@@ -33,7 +33,6 @@ $(".slider_button a").on('click', function() {
     state = 0;
     let btnIndex = $(this).index()+1;
     num = btnIndex;
-    // 같은 번호를 클릭하면 발생하는 애니메이션 제어
     if ( $(".slider"+btnIndex).hasClass('active') ) {
       state = 1;
       return;
@@ -52,7 +51,6 @@ $(".slider_button a").on('click', function() {
                          })
   }
 })
-
 let timer = setInterval(nextSlider, 3500)
 $(".slider_button a").on('click', function(e){
   e.preventDefault();

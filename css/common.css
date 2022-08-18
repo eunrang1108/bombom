@@ -39,7 +39,7 @@ body { position: relative; font-family: 'GmarketSansMedium', sans-serif }
 nav#gnb { position: absolute; top: 0; left: 0; z-index: -999; width: 100%; height: 435px; background: #fff; border-bottom: 1px solid #ccc; }
 nav#gnb > ul { position: relative; width: 780px; margin: 35px auto; text-align: center; display: flex; justify-content: space-evenly; }
 nav#gnb > ul > li:hover { color: #ff1c38; }
-nav#gnb > ul > li > a { display: block; height: 53px; font-size: 18px; color: #000;  }
+nav#gnb > ul > li > a { position: relative; display: block; height: 53px; font-size: 18px; color: #000;  }
 nav#gnb > ul > li:hover > a {  color: #ff1c38; }
 nav#gnb > ul > li > ul { padding-top: 10px; }
 nav#gnb > ul > li > ul li { line-height: 40px; }
@@ -123,9 +123,15 @@ nav#gnb > ul > li > ul li a { color: #000; font-size: 16px; }
 .text_box p:nth-child(3) { font-size: 24px; }
 .text_box span { color: #ff5555; }
 .text_box h3 { font-size: 56px; font-family: 'GmarketSansBold'; margin: 10px 0 35px 0; }
-.text_box a { display: block; color: #000; margin-top: 30px; font-size: 12px; }
-.text_box a::before { content: ""; width: 150px; height: 20px; background-image: url(../images/arrow.png);
-                                 background-size: 150px 20px }
+.text_box a { position: relative; display: block; color: #000; margin-top: 30px; font-size: 20px; }
+.text_box a:hover::after { content: ""; display: block; height: 5px;
+    border-bottom: 5px solid #ff5555; width: 168px;
+    animation-name: brand-progress;
+                                                                    animation-duration: 1.5s; }
+@keyframes brand-progress {
+        from { width: 0; }
+        to { width: 168px; }
+    }
 /*  베스트 신메뉴 */
 #best_new { overflow: hidden; width: 100%; height: 830px; position: relative;
                        margin-left:auto; margin-right:auto; text-align: center; }
@@ -155,28 +161,29 @@ nav#gnb > ul > li > ul li a { color: #000; font-size: 16px; }
 #store dl dt { font-size: 56px; font-family: 'GmarketSansBold'; text-transform: uppercase; margin: 30px 0; }
 #store dl dd { line-height: 40px; font-family: 'GmarketSansLight'; font-size: 20px; }
 #store article { text-align: center; }
-.store { width: 325px; height: 450px; display: flex; flex-flow: column;
-              box-shadow: 0 1px 1px rgba(0,0,0,0.03),
-              0 0px 2px rgba(0,0,0,0.03),
-              0 2px 4px rgba(0,0,0,0.03),
-              0 4px 8px rgba(0,0,0,0.03),
-              0 8px 16px rgba(0,0,0,0.03),
-              0 16px 32px rgba(0,0,0,0.03);}
+.store { position: relative; width: 325px; height: 450px; display: flex; flex-flow: column;
+          box-shadow: 0 1px 1px rgba(0,0,0,0.03),
+          0 0px 2px rgba(0,0,0,0.03),
+          0 2px 4px rgba(0,0,0,0.03),
+          0 4px 8px rgba(0,0,0,0.03),
+          0 8px 16px rgba(0,0,0,0.03),
+          0 16px 32px rgba(0,0,0,0.03);}
+.store:hover::before { content:""; position: absolute; top: 0; left: 0; width: 325px; height: 450px; box-sizing: border-box; }
 .store h3 { font-size: 36px; font-weight: bold; margin: 20px 0; }
 .store h3 span { font-size: 18px; font-family: 'GmarketSansMedium'; }
 #store a { color: #000; }
 #find_store { background: #ffded9 no-repeat center; background-image: url(../images/find_btn.png);
-                         background-position-y: 135px; 
-                         border: 2px solid #ffd0c9;  }
-#find_store:hover { border: 5px solid #ffd0c9; box-sizing: content-box; transition: 1.5s;  }
-#find_store h3 { color: #f07461; }
-#find_store .fsag { width: 250px; margin: 120px auto 60px; border-bottom: 2px solid #000;  }
+               background-position-y: 135px;
+               }
+#find_store:hover::before { border: 5px solid #ff8978; }
+#find_store h3 { color: #f07461; position: relative; }
+#find_store .fsag { position: relative; width: 250px; margin: 120px auto 60px; border-bottom: 2px solid #000;  }
 #find_store .fsag .find { height: 35px; width: 200px; border: none; background: none; outline: 0; }
 #find_store .fsag .find::placeholder { font-size: 16px; color: #000; }
 #find_store .fsag .find_btn { height: 20px; background: url(../images/find_btn2.png) no-repeat center;
                                                    border: none; color: transparent; }
 #find_store a:hover { background: #f67676; color: #fff; }
-#find_store a { display: block; width: 168px; height: 47px; background: #fff; color: #000;
+#find_store a { position: relative; transition: 0.5s; display: block; width: 168px; height: 47px; background: #fff; color: #000;
                             border-radius: 50px; margin: 0 auto; display: flex; align-items: center; justify-content: center;
                             box-shadow: 0 1px 1px rgba(0,0,0,0.0),
                                                     0 0px 2px rgba(0,0,0,0.03),
@@ -184,23 +191,23 @@ nav#gnb > ul > li > ul li a { color: #000; font-size: 16px; }
                                                     0 4px 8px rgba(0,0,0,0.03),
                                                     0 8px 16px rgba(0,0,0,0.03),
                                                     0 16px 16px rgba(0,0,0,0.03); }
-#new_store { background: #ffe5b0 no-repeat center; border: 2px solid #ffda90;
-                         background-image: url(../images/store2.png);
-                         background-position-y: 135px; }
-#new_store:hover { border: 5px solid #ffda90; box-sizing: content-box; transition: 1.5s;  }
+#new_store { background: #ffe5b0 no-repeat center;
+               background-image: url(../images/store2.png);
+               background-position-y: 135px; }
+#new_store:hover::before { border: 5px solid #feb522;  }
 #new_store h3 { color: #a88132; }
 #new_store p {  font-size: 22px; font-family: 'GmarketSansLight'; margin-bottom: 15px; }
 #new_store ul li { line-height: 30px; font-size: 16px;}
 .nsag { margin-top: 80px; }
-#franchise_store { background: #dbd5ff no-repeat center; border: 2px solid #d0c8ff;
+#franchise_store { background: #dbd5ff no-repeat center;
                                  background-image: url(../images/information.png);
                                  background-position-y: 135px;}
-#franchise_store:hover { border: 5px solid #d0c8ff; box-sizing: content-box; transition: 1.5s;  }
+#franchise_store:hover::before { border: 5px solid #5a3dff;  }
 #franchise_store h3 { color: #6d5bd1; }
-#franchise_store .fcag { margin: 80px 0 15px; }
+#franchise_store .fcag { position: relative; margin: 80px 0 15px; }
 #franchise_store .fcag p { font-size: 16px; line-height: 30px; }
 #franchise_store a:hover { background: #9388eb; color: #fff; }
-#franchise_store a {  display: block; width: 168px; height: 47px; background: #fff; color: #000;
+#franchise_store a { position: relative; transition: 0.5s; display: block; width: 168px; height: 47px; background: #fff; color: #000;
     border-radius: 50px; margin: 0 auto; display: flex; align-items: center; justify-content: center;
     box-shadow: 0 1px 1px rgba(0,0,0,0.0),
                             0 0px 2px rgba(0,0,0,0.03),
@@ -209,16 +216,16 @@ nav#gnb > ul > li > ul li a { color: #000; font-size: 16px; }
                             0 8px 16px rgba(0,0,0,0.03),
                             0 16px 16px rgba(0,0,0,0.03); }
 /*  하단 */
-#goodsBanner { width: 100%; height: 457px; position: relative;
+#goodsBanner { width: 100%; height: 457px; position: relative; 
     background: url(../images/lowerBg1.png) no-repeat center / cover; }
 #mapBanner { width: 100%; height: 287px;
 background: url(../images/lowerBg2.png) no-repeat center / cover; }
 .low { display: flex; flex-flow: column; align-items: center; justify-content: center; position: relative;
 }
 .low h3 { color: #fff; font-size: 30px; font-family: 'GmarketSansBold'; margin-bottom: 70px; z-index: 9; }
-.low a { display: block; width: 168px; height: 47px; background: #fff; color: #000; font-weight: bold;
+.low a { display: block; width: 168px; height: 47px; background: #fff; color: #000; font-weight: bold; transition: 0.5s;
 border-radius: 50px; margin: 0 auto; display: flex; align-items: center; justify-content: center; z-index: 9; }
-.low a:hover { background: #000; color: #fff; }
+.low a:hover { background: #000; color: #fff;  }
 .low::before { content: ""; position: absolute; top: 0; left: 0;
 width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); }
 /*  푸터 */
