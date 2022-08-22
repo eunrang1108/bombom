@@ -18,8 +18,8 @@ let nextSlider = function() {
 }
 let prevSlider = function() {
   classNum = $("#bannerWrap .banner:last").attr("class").substr(13, 1)-1;
-  $(".slider_button a").removeClass('on');
-  $(".slider_button a:eq("+ classNum +")").addClass('on');
+
+  $(".slider_button a:eq("+ classNum +")")
   $("#bannerWrap .banner:last").addClass('active')
                           .css({ opacity: 0 })
                           .animate({ opacity: 1 }, 500, function() {
@@ -33,7 +33,7 @@ $(".slider_button a").on('click', function() {
     state = 0;
     let btnIndex = $(this).index()+1;
     num = btnIndex;
-    if ( $(".slider"+btnIndex).hasClass('active') ) {
+    if ( $(".banner"+btnIndex).hasClass('active') ) {
       state = 1;
       return;
     }
@@ -59,25 +59,25 @@ $(".slider_button a").on('click', function(e){
 })
 
 // 브랜드 스토리
-$(document).ready(function() {
-  /* 1 */
-  $(window).scroll( function(){
-      /* 2 */
-      $('.text_box').each( function(i){
-          var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-          var bottom_of_window = $(window).scrollTop() + $(window).height();
-          /* 3 */
-          if( bottom_of_window > bottom_of_object/1.5 ){
-              $(this).animate({'opacity':'1'},1500);
-          }
-      }); 
-  });
+
+/* 1 */
+$(window).scroll( function(){
+    /* 2 */
+    $('.text_box').each( function(i){
+        var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+        var bottom_of_window = $(window).scrollTop() + $(window).height();
+        /* 3 */
+        if( bottom_of_window > bottom_of_object/1.5 ){
+            $(this).animate({'opacity':'1'},1500);
+        }
+    });
 });
+
 
 // 탭 메뉴
 $(".bsnw h3").click(function () {
-    $(".bsnw h3").removeClass("on").css("color", "gray")
-    $(".bsnw ul").css('display', 'none');
-    $(this).addClass("on").next( ).css("display", "flex")
-    $(this).css("color", "black")
+    $(".bsnw h3").removeClass("on");
+    $(this).addClass("on");
+    $(".bsnw ul").hide();
+    $(this).next().css({ display: 'flex', opacity: 0 }).animate({ opacity: 1 }, 200)
   });

@@ -32,11 +32,12 @@ body { position: relative; font-family: 'GmarketSansMedium', sans-serif }
     display: flex; justify-content: center;
     box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5); }
 #header:hover { overflow: visible; transition: 0.3s; }
-#header h1 { position: relative; z-index: 9999; width: 100%; left: 0; }
+#header h1 { position: absolute; z-index: 9999; top: 5px; left: 20px; }
 #header h1 a { display: block; height: 68px; width: 168px; text-indent: -9999px;
                            background: url(../images/bombomLogo.png); }
 /*  네비 */
-nav#gnb { position: absolute; top: 0; left: 0; z-index: -999; width: 100%; height: 435px; background: #fff; border-bottom: 1px solid #ccc; }
+nav#gnb { position: absolute; top: 0; left: 0; z-index: -999; width: 100%; height: 435px;
+                   background: #fff; border-bottom: 1px solid #ccc; }
 nav#gnb > ul { position: relative; width: 780px; margin: 35px auto; text-align: center; display: flex; justify-content: space-evenly; }
 nav#gnb > ul > li:hover { color: #ff1c38; }
 nav#gnb > ul > li > a { position: relative; display: block; height: 53px; font-size: 18px; color: #000;  }
@@ -49,20 +50,23 @@ nav#gnb > ul > li > ul li a { color: #000; font-size: 16px; }
 /*  배너 */
 #main_visual_wrap { width: 100%; height: 780px; position: relative;
                                      box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.5); }
-#bannerWrap { overflow: hidden; width: 1440px; margin: 0 auto; display: flex; }
-.banner { width: 100%; height: 700px; position: relative; margin-right: 400px; }
+#bannerWrap { overflow: hidden; width: 1440px; margin: 0 auto; height: 700px; position: relative; }
+.banner {  position: absolute; top: 0; left: 0; width: 100%; height: 700px; margin-right: 400px;
+                   background: #fff; }
+.active { z-index: 1; }
 .banner h3 { position: absolute; top: 180px; left: 50px; font-size: 60px; font-family: 'GmarketSansLight'; }
 .banner p { position: absolute; top: 420px; left: 50px; font-size: 24px; line-height: 40px; }
-.banner img { position: absolute; top: 0; left: -220px; z-index: -999;}
+.banner img { position: absolute; top: 100px; right: 0; }
 .banner .bannerWrap { width: 1440px; margin: 0 auto; }
 /*  슬러시 배너 */
-#slush_banner {  }
+#slush_banner { }
 #slush_banner .slush h3 span { font-size: 70px; font-family: 'GmarketSansBold'; }
 #slush_banner .slush h3 span:nth-child(2) { color: #000000; font-family: 'GmarketSansBold';
                                                                                 text-decoration: underline; text-underline-position:under;
                                                                                 text-decoration-thickness: 5px; }
 #slush_banner .slush h3 span:nth-child(4) { color: #238bff; font-family: 'GmarketSansBold'; }
 #slush_banner .slush p span { font-family: 'GmarketSansBold'; }
+#slush_banner .slush img { position: absolute; top: 50px; right: 0; }
 /*  스틱 배너 */
 #stick_banner .stick h3 span { font-size: 70px; color: #313131; font-family: 'GmarketSansBold'; }
 #stick_banner .stick h3 span:nth-child(1) { color: #f7d170; font-family: 'GmarketSansBold'; }
@@ -82,20 +86,14 @@ nav#gnb > ul > li > ul li a { color: #000; font-size: 16px; }
 /*  배너 버튼 */
 .slider_button { z-index: 99; position: absolute; bottom: 70px; left: calc(50% - 350px); display: flex;}
 .slider_button a { display: block; width: 135px; height: 30px; margin: 0 21px;
-                                font-size: 16px; line-height: 30px; text-align: center; color: #000; }
-.slider_button a:nth-child(1)::before { content: ""; position: absolute; bottom: 0; left: 21px;
-                                                                  width: 135px; height: 2px; background-color: rgba(0,0,0,.3); }
-.slider_button a:nth-child(2)::before { content: ""; position: absolute; bottom: 0; left: 196px;
-                                                                  width: 135px; height: 2px; background-color: rgba(0,0,0,.3); }
-.slider_button a:nth-child(3)::before { content: ""; position: absolute; bottom: 0; left: 375px;
-                                                                  width: 135px; height: 2px; background-color: rgba(0,0,0,.3); }
-.slider_button a:nth-child(4)::before { content: ""; position: absolute; bottom: 0; left: 553px;
-                                                                  width: 135px; height: 2px; background-color: rgba(0,0,0,.3); }
-.slider_button a.active2::after {     content: ''; position: absolute; bottom: 0; left: 21px;
-                                                                    width: 135px; height: 2px; background-color: #000;
-                                                                    animation-name: slider-progress;
-                                                                    animation-duration: 3.5s;
-                                                                    animation-iteration-count: infinite;
+                  position: relative;  font-size: 16px; line-height: 30px; text-align: center; color: #000; }
+.slider_button a::before { content: ""; position: absolute; bottom: 0; left: 0px;
+                          width: 135px; height: 2px; background-color: rgba(0,0,0,.3); }
+.slider_button a.active2::after {  content: ''; position: absolute; bottom: 0; left: 0px;
+                                  width: 135px; height: 2px; background-color: #000;
+                                  animation-name: slider-progress;
+                                  animation-duration: 3.5s;
+                                  animation-iteration-count: infinite;
                                                                     }
 /* .slider_button a:nth-child(2)::after {     content: ''; position: absolute; bottom: 0; left: 196px;
                                                                     width: 135px; height: 2px; background-color: #000;
@@ -123,27 +121,30 @@ nav#gnb > ul > li > ul li a { color: #000; font-size: 16px; }
 .text_box p:nth-child(3) { font-size: 24px; }
 .text_box span { color: #ff5555; }
 .text_box h3 { font-size: 56px; font-family: 'GmarketSansBold'; margin: 10px 0 35px 0; }
-.text_box a { position: relative; display: block; color: #000; margin-top: 30px; font-size: 20px; }
-.text_box a:hover::after { content: ""; display: block; height: 5px;
-    border-bottom: 5px solid #ff5555; width: 168px;
-    animation-name: brand-progress;
-                                                                    animation-duration: 1.5s; }
+.text_box a { position: relative; display: block; color: #000; font-size: 16px;
+                        width: 168px; height: 47px; background: #ff5555; color: #fff; font-weight: bold;
+                        transition: 0.5s; border-radius: 50px; margin: 50px 0 0 0;
+                        display: flex; align-items: center; justify-content: center;}
+.text_box a:hover { background: #000; color: #fff; }
 @keyframes brand-progress {
         from { width: 0; }
         to { width: 168px; }
     }
 /*  베스트 신메뉴 */
 #best_new { overflow: hidden; width: 100%; height: 830px; position: relative;
-                       margin-left:auto; margin-right:auto; text-align: center; }
+           margin-left:auto; margin-right:auto; margin-bottom: 50px; text-align: center; }
 #best_new .on::after { content: ""; display: block;
-                                        border-bottom: 6px solid #ff9173;
-                                        margin: 10px auto;  }
-#best_new p { margin: 50px 0 30px; line-height: 40px; font-size: 20px; font-family: 'GmarketSansLight'; }
+                      border-bottom: 6px solid #ff9173;
+                      margin: 10px auto;  }
+#best_new p { margin: 120px 0 30px; line-height: 40px; font-size: 20px; font-family: 'GmarketSansLight'; }
 #product { width: 1440px; margin: 0 auto; height: 830px; margin: 0 auto; position: relative; display: flex; justify-content: center; }
 .bsnw {   }
-.bsnw h3 { margin-bottom: 10px; font-size: 32px; padding: 0 20px; height: 55px;  }
+.bsnw h3 { margin-bottom: 10px; font-size: 32px; padding: 0 20px; height: 55px;
+          cursor: pointer;  color: gray; }
+.bsnw h3.on { color: black; }
 .bsnw ul { display: flex; align-items: center; justify-content: space-evenly; margin-top: 50px;
-                  width:100%; text-align:center; height: 500px; position: absolute; top: 0; left: 0; }
+          animation: bsnw-progress;
+          width:100%; text-align:center; height: 500px; position: absolute; top: 0; left: 0; }
 .bsnw ul li { width: 25%; height: 460px; position: relative; text-align: center; display: flex; align-items: center; justify-content: center; }
 .bsnw ul li a { color: #767676; font-size: 16px; }
 .bsnw ul li a figure figcaption { width: 100%; position: absolute; bottom: -20px; left: 0;  }
@@ -151,14 +152,13 @@ nav#gnb > ul > li > ul li a { color: #000; font-size: 16px; }
 .best { z-index: 999;  }
 .new ul { display: none; }
 .new h3 { color: gray; }
-.bsnwBg { position: absolute; top: 0; left: 0; z-index: -9; width: 100%; height: 615px; background: #fffbeb; }
-
+.bsnwBg { position: absolute; top: 0; left: 0; z-index: -9; width: 100%; height: 645px; background: #fffbeb; }
 /* 스토어 */
 #store { position: relative; width: 1440px; margin: 0 auto; padding: 250px 0 100px;
         display: flex; justify-content: space-around; }
 #store dl { position: absolute; top: 0; text-align: center; }
 #store dl h3 { font-size: 36px; font-family: 'GmarketSansBold'; }
-#store dl dt { font-size: 56px; font-family: 'GmarketSansBold'; text-transform: uppercase; margin: 30px 0; }
+#store dl dt { font-size: 56px; font-family: 'GmarketSansBold'; text-transform: uppercase; margin: 20px 0; }
 #store dl dd { line-height: 40px; font-family: 'GmarketSansLight'; font-size: 20px; }
 #store article { text-align: center; }
 .store { position: relative; width: 325px; height: 450px; display: flex; flex-flow: column;
@@ -171,7 +171,7 @@ nav#gnb > ul > li > ul li a { color: #000; font-size: 16px; }
 .store:hover::before { content:""; position: absolute; top: 0; left: 0; width: 325px; height: 450px; box-sizing: border-box; }
 .store h3 { font-size: 36px; font-weight: bold; margin: 20px 0; }
 .store h3 span { font-size: 18px; font-family: 'GmarketSansMedium'; }
-#store a { color: #000; }
+#store a { color: #000;  }
 #find_store { background: #ffded9 no-repeat center; background-image: url(../images/find_btn.png);
                background-position-y: 135px;
                }
@@ -216,7 +216,7 @@ nav#gnb > ul > li > ul li a { color: #000; font-size: 16px; }
                             0 8px 16px rgba(0,0,0,0.03),
                             0 16px 16px rgba(0,0,0,0.03); }
 /*  하단 */
-#goodsBanner { width: 100%; height: 457px; position: relative; 
+#goodsBanner { width: 100%; height: 457px; position: relative;
     background: url(../images/lowerBg1.png) no-repeat center / cover; }
 #mapBanner { width: 100%; height: 287px;
 background: url(../images/lowerBg2.png) no-repeat center / cover; }
@@ -236,9 +236,9 @@ width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); }
 .companyInfo address { color: #fff; font-style: normal; font-family: 'GmarketSansLight';  }
 .companyInfo .sns { width: 67px; height: 25px; margin-top: 25px; display: flex; justify-content: space-between; }
 .companyInfo .sns a { width: 20px; height: 20px; text-indent: -9999px; display: block;   }
-.companyInfo .sns a:nth-child(1) { background: url(../images/sns_logo_insta.png) no-repeat center; }
-.companyInfo .sns a:nth-child(2) { background: url(../images/sns_logo_facebook.png) no-repeat center; }
-.companyInfo .sns a:nth-child(3) { background: url(../images/sns_logo_naver.png) no-repeat center; }
+.companyInfo .sns .insta { background: url(../images/sns_logo_insta.png) no-repeat center; }
+.companyInfo .sns .facebook { background: url(../images/sns_logo_facebook.png) no-repeat center; }
+.companyInfo .sns .naver { background: url(../images/sns_logo_naver.png) no-repeat center; }
 .companyInfo .footerLogo { display: block; width: 177px; height: 72px; margin-bottom: 25px;
                                                   background: url(../images/footerLogo.png) no-repeat center;
                                                   text-indent: -9999px; position: absolute; bottom: 0; right: 0;  }
