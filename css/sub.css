@@ -1,12 +1,17 @@
 @charset "utf-8";
-
+nav#gnb > ul > li > .page { color: #ff1c38; }
 /*  about us */
-#about_us { width: 1440px; margin: 0 auto; position: relative; text-align: center; height: 780px;
-                       padding-top: 200px; }
-#about_us > dl dt { font-size: 60px; margin-bottom: 60px; }
-#about_us > dl dd { font-size: 28px; font-family: 'GmarketSansLight'; line-height: 50px; }
-.concept { width: 1440px; height: 350px; }
-.concept ul { display: flex; justify-content: center; align-items: center; 
+#about_us { width: 100%; margin: 0 auto; position: relative; text-align: center; height: 1330px;
+                       padding-top: 70px; }
+#about_us h2 { font-size: 60px; line-height: 100px; }
+#about_us p { position: relative; font-size: 24px; color: #fff; margin-bottom: 40px; }
+.au_text { width: 100%; height: 472px; text-align: center; text-transform: uppercase;
+                 color: #fff; padding-top: 190px; box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
+                 background: url(../images/brand_story-bg.jpg) no-repeat center / cover; }
+#about_us > dl dt {  position: relative; font-size: 60px; margin: 100px 0; }
+#about_us > dl dd {  position: relative; font-size: 28px; font-family: 'GmarketSansLight'; line-height: 50px; }
+.concept { position: relative; width: 1440px; height: 350px; margin: 0 auto; }
+.concept ul {  position: relative; display: flex; justify-content: center; align-items: center; 
                        width: 1440px; text-align: center; position: relative; top: 80px; }
 .concept ul li { width: 390px; height: 245px; }
 .concept ul li > dl { margin-top: 170px; }
@@ -25,12 +30,12 @@
 .drink:hover { background: url(../images/drink-b.png) no-repeat center ;
                          background-position-y: 40px; }
 /*  history */
-#history { width: 100%; height: 2400px; position: relative; top: 0; margin: 0 auto;
+#history { width: 100%; height: 2060px; position: relative; top: 0; margin: 0 auto;
                    display: flex; flex-flow: column; justify-content: center; align-items: center; }
-#history h2 {  font-size: 60px; }
+#history h2 {  font-size: 60px; margin-top: 60px; }
 #history ul { position: relative; top: 50px; margin: 50px 0; width: 1440px; 
                        display: flex; flex-flow: column; justify-content: center; align-items: flex-start; }
-.year { font-size: 40px; font-family: 'GmarketSansBold'; margin-top: 50px; width: 1440px;
+.year { font-size: 40px; font-family: 'GmarketSansBold'; margin-top: 30px; width: 1440px;
              border-bottom: 3px solid #000; padding-bottom: 30px; }
 #history ul li ol { font-size: 20px; color: #5b5b5b; padding-left: 0;  }
 #history ul li ol li {  }
