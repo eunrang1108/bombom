@@ -12,20 +12,27 @@
 .concept ul li > dl { margin-top: 170px; }
 .concept ul li > dl dt { margin-top: 120px; font-size: 21px; font-family: 'GmarketSansLight'; }
 .concept ul li > dl dd { font-size: 24px; }
-.shop  { background: url(../images/shop.png) no-repeat center ;
+.shop  { background: url(../images/shop.png) no-repeat center ; transition: 1s;
               background-position-y: 40px; }
+.shop:hover { background: url(../images/shop-b.png) no-repeat center ; 
+                         background-position-y: 40px }
 .mood { background: url(../images/mood.png) no-repeat center ;
                background-position-y: 40px; border: 1px solid #bbbbbb; border-top: hidden; border-bottom: hidden; }
+.mood:hover { background: url(../images/mood-b.png) no-repeat center ;
+                          background-position-y: 40px }
 .drink { background: url(../images/drink.png) no-repeat center ;
               background-position-y: 40px; }
+.drink:hover { background: url(../images/drink-b.png) no-repeat center ;
+                         background-position-y: 40px; }
 /*  history */
-#history { width: 100%; height: 3100px; position: relative; top: 0; margin: 0 auto;
+#history { width: 100%; height: 2400px; position: relative; top: 0; margin: 0 auto;
                    display: flex; flex-flow: column; justify-content: center; align-items: center; }
-#history h2 { font-size: 60px; }
+#history h2 {  font-size: 60px; }
 #history ul { position: relative; top: 50px; margin: 50px 0; width: 1440px; 
                        display: flex; flex-flow: column; justify-content: center; align-items: flex-start; }
-.year { font-size: 40px; font-family: 'GmarketSansBold'; margin-top: 50px; }
-#history ul li ol { font-size: 20px; color: #5b5b5b; border-bottom: 3px solid #000; }
+.year { font-size: 40px; font-family: 'GmarketSansBold'; margin-top: 50px; width: 1440px;
+             border-bottom: 3px solid #000; padding-bottom: 30px; }
+#history ul li ol { font-size: 20px; color: #5b5b5b; padding-left: 0;  }
 #history ul li ol li {  }
 #history ul li ol li span { font-family: 'GmarketSansBold'; color: #000; }
 

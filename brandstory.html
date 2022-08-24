@@ -6,8 +6,10 @@
     <title>카페 봄봄</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/sub.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="shortcut icon" href="./images/favicon-16x16.png" type="image/x-icon">
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/common.js" defer></script>
 <body>
     <header id="header">
@@ -70,26 +72,26 @@
     <section id="about_us">
         <h2 class="hidden">about us</h2>
         <dl>
-            <dt>봄 한 잔 마시고 가실래요? </dt>
-            <dd>커피 한 잔의 따스한 사치를 누릴 수 있는 작은 쉼터가 되는 것이 cafe봄봄이 추구하는 방향성입니다.<br>
+            <dt  data-aos="fade-down">봄 한 잔 마시고 가실래요? </dt>
+            <dd data-aos="fade-down">커피 한 잔의 따스한 사치를 누릴 수 있는 작은 쉼터가 되는 것이 cafe봄봄이 추구하는 방향성입니다.<br>
                 따스하고 산뜻한 봄을 한 잔 마시고, 잠시 여유를 가지러 봄봄을 찾아와주세요. </dd>
         </dl>
         <article class="concept">
             <h2 class="hidden">컨셉</h2>
             <ul>
-                <li class="shop">
+                <li class="shop" data-aos="fade-down">
                     <dl>
                         <dt>봄에피는 꽃과 같이 화사하고 밝은</dt>
                         <dd>매장</dd>
                     </dl>
                 </li>
-                <li class="mood">
+                <li class="mood" data-aos="fade-down">
                     <dl>
                         <dt>친절하고 발랄함이 돋보이는</dt>
                         <dd>분위기</dd>
                     </dl>
                 </li>
-                <li class="drink">
+                <li class="drink" data-aos="fade-down">
                     <dl>
                         <dt>꽃처럼 화려한 비주얼의</dt>
                         <dd>음료</dd>
@@ -99,15 +101,15 @@
         </article>
     </section>
     <section id="history">
-        <h2>한 단계씩 차근차근</h2>
+        <h2 data-aos="fade-down">한 단계씩 차근차근</h2>
         <ul>
-            <li class="year">2022
+            <li class="year" data-aos="fade-down">2022
                 <ol>
                     <li><span>06월&#46;</span>  가맹 450호점 개점</li>
                     <li><span>05월&#46;</span>  카페봄봄 본사 봄봄빌딩 사옥 이전</li>
                 </ol>
             </li>
-            <li class="year">2021
+            <li class="year" data-aos="fade-down">2021
                 <ol>
                     <li><span>12월&#46;</span>  공정거래위원회 2021 착한프랜차이즈 선정</li>
                     <li><span>10월&#46;</span>  가맹 400호 점 개점</li>
@@ -115,41 +117,41 @@
                     <li><span>06월&#46;</span>  가맹 350호 점 개점</li>
                 </ol>
             </li>
-            <li class="year">2020
+            <li class="year" data-aos="fade-down">2020
                 <ol>
                     <li><span>10월&#46;</span>  2020 소비자의 선택 &#45; 프랜차이즈/커피전문점 부문 대상 수상</li>
                     <li><span>10월&#46;</span>  가맹 300호 점 개점</li>
                     <li><span>02월&#46;</span>  가맹 250호 점 개점</li>
                 </ol>
             </li>
-            <li class="year">2019
+            <li class="year" data-aos="fade-down">2019
                 <ol>
                     <li><span>04월&#46;</span>  이승은 대표이사 취임</li>
                 </ol>
             </li>
-            <li class="year">2018
+            <li class="year" data-aos="fade-down">2018
                 <ol>
                     <li><span>06월&#46;</span>  머니투데이 2018 소비자 만족 대상 &#45; 가성비커피 부문 대상 수상</li>
                 </ol>
             </li>
-            <li class="year">2017
+            <li class="year" data-aos="fade-down">2017
                 <ol>
                     <li><span>08월&#46;</span>  가맹 100호 점 개점</li>
                     <li><span>06월&#46;</span>  ㈜카페봄봄 &#183; ㈜희창유업 상호협력 MOU체결</li>
                 </ol>
             </li>
-            <li class="year">2016
+            <li class="year" data-aos="fade-down">2016
                 <ol>
                     <li>3자 물류 체제 구축</li>
                 </ol>
             </li>
-            <li class="year">2015
+            <li class="year" data-aos="fade-down">2015
                 <ol>
                     <li>가맹 50호 점 개점</li>
                     <li>주식회사 카페봄봄 가맹사업 개시</li>
                 </ol>
             </li>
-            <li class="year">2012
+            <li class="year" data-aos="fade-down">2012
                 <ol>
                     <li>카페봄봄 런칭</li>
                 </ol>
@@ -176,5 +178,11 @@
             <a href="#" class="footerLogo">카페봄봄</a>
         </div>
     </footer>
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 3000
+        });
+    </script> 
 </body>
 </html>
