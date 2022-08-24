@@ -51,7 +51,9 @@ $(".slider_button a").on('click', function() {
                          })
   }
 })
-let timer = setInterval(nextSlider, 3500)
+let timer = setInterval(_.throttle(function() {
+              nextSlider();
+            },3500),3500)
 $(".slider_button a").on('click', function(e){
   e.preventDefault();
   clearInterval(timer);
@@ -81,3 +83,15 @@ $(".bsnw h3").click(function () {
     $(".bsnw ul").hide();
     $(this).next().css({ display: 'flex', opacity: 0 }).animate({ opacity: 1 }, 200)
   });
+//  top 버튼
+$(function() {
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 500) {
+          $('#MOVE_TOP_BTN').fadeIn();}
+    else {$('#MOVE_TOP_BTN').fadeOut();}
+});
+$("#MOVE_TOP_BTN").click(function() {
+$('html, body').animate({ scrollTop : 0}, 400); return false; }); });
+
+$(".footerLogo").click(function() {
+$('html, body').animate({ scrollTop : 0}, 400); return false; });
