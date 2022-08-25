@@ -1,4 +1,5 @@
 @charset "utf-8";
+/*  네비 활성화 */
 nav#gnb > ul > li > .page { color: #ff1c38; }
 /*  about us */
 #about_us { width: 100%; margin: 0 auto; position: relative; text-align: center; height: 1330px;
@@ -6,8 +7,13 @@ nav#gnb > ul > li > .page { color: #ff1c38; }
 #about_us h2 { font-size: 60px; line-height: 100px; }
 #about_us p { position: relative; font-size: 24px; color: #fff; margin-bottom: 40px; }
 .au_text { width: 100%; height: 472px; text-align: center; text-transform: uppercase;
+                 
                  color: #fff; padding-top: 190px; box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
                  background: url(../images/brand_story-bg.jpg) no-repeat center / cover; }
+@keyframes background-progress {
+from { width: 100%; }
+to { width: 120%; }
+}
 #about_us > dl dt {  position: relative; font-size: 60px; margin: 100px 0; }
 #about_us > dl dd {  position: relative; font-size: 28px; font-family: 'GmarketSansLight'; line-height: 50px; }
 .concept { position: relative; width: 1440px; height: 350px; margin: 0 auto; }
@@ -38,6 +44,5 @@ nav#gnb > ul > li > .page { color: #ff1c38; }
 .year { font-size: 40px; font-family: 'GmarketSansBold'; margin-top: 30px; width: 1440px;
              border-bottom: 3px solid #000; padding-bottom: 30px; }
 #history ul li ol { font-size: 20px; color: #5b5b5b; padding-left: 0;  }
-#history ul li ol li {  }
 #history ul li ol li span { font-family: 'GmarketSansBold'; color: #000; }
 

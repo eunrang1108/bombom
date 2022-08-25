@@ -12,7 +12,6 @@
 .banner img { position: absolute; top: 100px; right: 0; }
 .banner .bannerWrap { width: 1440px; margin: 0 auto; }
 /*  슬러시 배너 */
-#slush_banner { }
 #slush_banner .slush h3 span { font-size: 70px; font-family: 'GmarketSansBold'; }
 #slush_banner .slush h3 span:nth-child(2) { color: #000000; font-family: 'GmarketSansBold';
                                                                text-decoration: underline; text-underline-position:under;
@@ -48,19 +47,6 @@
                  animation-duration: 3.5s;
                  animation-iteration-count: infinite;
                                                    }
-/* .slider_button a:nth-child(2)::after {     content: ''; position: absolute; bottom: 0; left: 196px;
-                                                   width: 135px; height: 2px; background-color: #000;
-                                                   animation-name: slider-progress;
-                                                   animation-duration: 3.5s; }
-.slider_button a:nth-child(3)::after {     content: ''; position: absolute; bottom: 0; left: 375px;
-                                                   width: 135px; height: 2px; background-color: #000;
-                                                   animation-name: slider-progress;
-                                                   animation-duration: 3.5s; }
-.slider_button a:nth-child(4)::after {     content: ''; position: absolute; bottom: 0; left: 553px;
-                                                   width: 135px; height: 2px; background-color: #000;
-                                                   animation-name: slider-progress;
-                                                   animation-duration: 3.5s; } */
-
 @keyframes slider-progress {
 from { width: 0; }
 to { width: 135px; }
@@ -91,7 +77,6 @@ margin-left:auto; margin-right:auto; margin-bottom: 50px; text-align: center; }
      margin: 10px auto;  }
 #best_new p { margin: 120px 0 30px; line-height: 40px; font-size: 20px; font-family: 'GmarketSansLight'; }
 #product { width: 1440px; margin: 0 auto; height: 830px; margin: 0 auto; position: relative; display: flex; justify-content: center; }
-.bsnw {   }
 .bsnw h3 { margin-bottom: 10px; font-size: 32px; padding: 0 20px; height: 55px;
 cursor: pointer;  color: gray; }
 .bsnw h3.on { color: black; }
